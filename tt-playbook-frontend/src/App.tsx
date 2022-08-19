@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const App = () => {
+const App = (): ReactElement => {
   const { t } = useTranslation()
   return (
     <div className="App">
