@@ -1,9 +1,8 @@
 # tt-playbook-frontend
 
-
 ## Prerequisities
- - yarn
 
+- yarn
 
 ### Run locally
 

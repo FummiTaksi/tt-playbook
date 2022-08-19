@@ -1,5 +1,5 @@
-import React from 'react';
-import {useTranslation} from "react-i18next";
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const App = () => {
   const { t } = useTranslation()
@@ -7,7 +7,7 @@ const App = () => {
     <div className="App">
       <h1>{t('frontpage.welcome')}</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
