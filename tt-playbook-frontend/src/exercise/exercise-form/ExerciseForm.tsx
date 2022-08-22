@@ -16,31 +16,33 @@ export interface SelectableExercise extends Exercise {
 export class ExerciseCatalog {
   exercises: Exercise[] = []
 
-  constructor () {
+  constructor() {
     makeAutoObservable(this)
   }
 
-  add (exercise: Exercise): void {
+  add(exercise: Exercise): void {
     const newExercises = [...this.exercises, exercise]
 
     this.exercises = newExercises
   }
 }
 
-export const ExerciseForm = observer(({ exercises, exerciseCatalog }: Props): ReactElement => {
-  const selectableExercises: SelectableExercise[] = exercises.map(
-    (exercise) => {
-      return {
-        ...exercise,
-        selected: false,
-      }
-    },
-  )
+export const ExerciseForm = observer(
+  ({ exercises, exerciseCatalog }: Props): ReactElement => {
+    const selectableExercises: SelectableExercise[] = exercises.map(
+      (exercise) => {
+        return {
+          ...exercise,
+          selected: false,
+        }
+      },
+    )
 
-  return (
-    <div>
-      <UnselectedExercises exercises={selectableExercises} />
-      <p>You have selected {exerciseCatalog.exercises.length} exercises</p>
-    </div>
-  )
-})
+    return (
+      <div>
+        <UnselectedExercises exercises={selectableExercises} />
+        <p>You have selected {exerciseCatalog.exercises.length} exercises</p>
+      </div>
+    )
+  },
+)
