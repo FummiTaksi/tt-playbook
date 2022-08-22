@@ -5,11 +5,11 @@ import { initReactI18next } from 'react-i18next'
 
 const resources = {
   en: {
-    translation: en
+    translation: en,
   },
   fi: {
-    translation: fi
-  }
+    translation: fi,
+  },
 }
 
 // eslint-disable-next-line
@@ -18,8 +18,8 @@ i18n.use(initReactI18next).init({
   lng: 'en',
   fallbackLng: 'en',
   interpolation: {
-    escapeValue: false
-  }
+    escapeValue: false,
+  },
 })
 
 export { i18n }
