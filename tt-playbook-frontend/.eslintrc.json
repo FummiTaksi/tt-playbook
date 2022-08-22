@@ -11,5 +11,7 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "comma-dangle": 0
+  }
 }
