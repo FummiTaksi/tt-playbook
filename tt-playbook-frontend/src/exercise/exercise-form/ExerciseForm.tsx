@@ -22,7 +22,6 @@ export class ExerciseCatalog {
 
   add(exercise: Exercise): void {
     const newExercises = [...this.exercises, exercise]
-
     this.exercises = newExercises
   }
 }
@@ -40,7 +39,10 @@ export const ExerciseForm = observer(
 
     return (
       <div>
-        <UnselectedExercises exercises={selectableExercises} />
+        <UnselectedExercises
+          exercises={selectableExercises}
+          onSelectExercise={(exercise) => exerciseCatalog.add(exercise)}
+        />
         <p>You have selected {exerciseCatalog.exercises.length} exercises</p>
       </div>
     )

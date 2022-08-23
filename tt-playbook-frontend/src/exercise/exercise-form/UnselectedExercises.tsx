@@ -3,16 +3,20 @@ import { SelectableExercise } from './ExerciseForm'
 
 interface Props {
   exercises: SelectableExercise[]
+  onSelectExercise: (exercise: SelectableExercise) => void
 }
 
-export const UnselectedExercises = ({ exercises }: Props): ReactElement => {
+export const UnselectedExercises = ({
+  exercises,
+  onSelectExercise,
+}: Props): ReactElement => {
   return (
     <ul>
       {exercises.map((exercise) => {
         return (
           <div key={exercise.id}>
             <p>{exercise.title.value_en}</p>
-            <button>SELECT</button>
+            <button onClick={(e) => onSelectExercise(exercise)}>SELECT</button>
           </div>
         )
       })}
