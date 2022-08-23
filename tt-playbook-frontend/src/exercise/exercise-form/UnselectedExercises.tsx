@@ -16,7 +16,7 @@ export const UnselectedExercises = ({
         return (
           <div key={exercise.id}>
             <p>{exercise.title.value_en}</p>
-            <button onClick={(e) => onSelectExercise(exercise)}>SELECT</button>
+            <button onClick={() => onSelectExercise(exercise)}>SELECT</button>
           </div>
         )
       })}
