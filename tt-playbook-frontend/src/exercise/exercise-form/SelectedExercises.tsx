@@ -1,10 +1,16 @@
 import React, { ReactElement } from 'react'
 import { Exercise } from '../exercise'
+import styled from 'styled-components'
 
 interface Props {
   exercises: Exercise[]
   onUnselectExercise: (exercise: Exercise) => void
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
 export const SelectedExercises = ({
   exercises,
@@ -14,12 +20,12 @@ export const SelectedExercises = ({
     <ul>
       {exercises.map((exercise) => {
         return (
-          <div key={exercise.id}>
+          <Container key={exercise.id}>
             <p>{exercise.title.value_en}</p>
             <button onClick={() => onUnselectExercise(exercise)}>
               UNSELECT
             </button>
-          </div>
+          </Container>
         )
       })}
     </ul>

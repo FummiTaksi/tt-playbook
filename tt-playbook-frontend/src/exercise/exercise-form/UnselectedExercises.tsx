@@ -1,10 +1,16 @@
 import React, { ReactElement } from 'react'
+import styled from 'styled-components'
 import { SelectableExercise } from './ExerciseForm'
 
 interface Props {
   exercises: SelectableExercise[]
   onSelectExercise: (exercise: SelectableExercise) => void
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
 export const UnselectedExercises = ({
   exercises,
@@ -14,10 +20,10 @@ export const UnselectedExercises = ({
     <ul>
       {exercises.map((exercise) => {
         return (
-          <div key={exercise.id}>
+          <Container key={exercise.id}>
             <p>{exercise.title.value_en}</p>
             <button onClick={() => onSelectExercise(exercise)}>SELECT</button>
-          </div>
+          </Container>
         )
       })}
     </ul>
