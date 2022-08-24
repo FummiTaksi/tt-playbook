@@ -1,10 +1,8 @@
 import React, { ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-  ExerciseCatalog,
-  ExerciseForm,
-} from './exercise/exercise-form/ExerciseForm'
+import { ExerciseForm } from './exercise/exercise-form/ExerciseForm'
 import { exercises } from './constants'
+import { ExerciseCatalog } from './exercise/exercise-catalog'
 
 const App = (): ReactElement => {
   const { t } = useTranslation()

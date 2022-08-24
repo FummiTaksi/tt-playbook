@@ -17,17 +17,20 @@ export const SelectedExercises = ({
   onUnselectExercise,
 }: Props): ReactElement => {
   return (
-    <ul>
-      {exercises.map((exercise) => {
-        return (
-          <Container key={exercise.id}>
-            <p>{exercise.title.value_en}</p>
-            <button onClick={() => onUnselectExercise(exercise)}>
-              UNSELECT
-            </button>
-          </Container>
-        )
-      })}
-    </ul>
+    <div>
+      <p>You have selected {exercises.length} exercises</p>
+      <ul>
+        {exercises.map((exercise) => {
+          return (
+            <Container key={exercise.id}>
+              <p>{exercise.title.value_en}</p>
+              <button onClick={() => onUnselectExercise(exercise)}>
+                UNSELECT
+              </button>
+            </Container>
+          )
+        })}
+      </ul>
+    </div>
   )
 }
