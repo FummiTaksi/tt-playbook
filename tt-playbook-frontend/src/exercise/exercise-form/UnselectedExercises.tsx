@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
-import { SelectableExercise } from './ExerciseForm'
+import { Exercise } from '../exercise'
 
 interface Props {
-  exercises: SelectableExercise[]
-  onSelectExercise: (exercise: SelectableExercise) => void
+  exercises: Exercise[]
+  onSelectExercise: (exercise: Exercise) => void
 }
 
 const Container = styled.div`

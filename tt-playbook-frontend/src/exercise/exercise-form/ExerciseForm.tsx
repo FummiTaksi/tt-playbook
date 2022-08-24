@@ -10,10 +10,6 @@ interface Props {
   exercises: Exercise[]
 }
 
-export interface SelectableExercise extends Exercise {
-  selected: boolean
-}
-
 export class ExerciseCatalog {
   exercises: Exercise[] = []
 
@@ -37,19 +33,10 @@ export class ExerciseCatalog {
 
 export const ExerciseForm = observer(
   ({ exercises, exerciseCatalog }: Props): ReactElement => {
-    const selectableExercises: SelectableExercise[] = exercises.map(
-      (exercise) => {
-        return {
-          ...exercise,
-          selected: false,
-        }
-      },
-    )
-
     return (
       <div>
         <UnselectedExercises
-          exercises={selectableExercises}
+          exercises={exercises}
           onSelectExercise={(exercise) => exerciseCatalog.add(exercise)}
         />
         <p>You have selected {exerciseCatalog.exercises.length} exercises</p>
