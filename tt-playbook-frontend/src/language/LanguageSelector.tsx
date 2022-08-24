@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const LanguageSelector = (): ReactElement => {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const changeLanguage = async (language: string): Promise<void> => {
     await i18n.changeLanguage(language)
@@ -16,7 +16,7 @@ export const LanguageSelector = (): ReactElement => {
           })()
         }}
       >
-        English
+        {t('languages.en')}
       </button>
       <button
         onClick={() => {
@@ -25,7 +25,7 @@ export const LanguageSelector = (): ReactElement => {
           })()
         }}
       >
-        Suomi
+        {t('languages.fi')}
       </button>
     </div>
   )

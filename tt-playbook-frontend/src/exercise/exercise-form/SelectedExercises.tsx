@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react'
 import { Exercise } from '../exercise'
 import styled from 'styled-components'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   exercises: Exercise[]
@@ -16,16 +17,21 @@ export const SelectedExercises = ({
   exercises,
   onUnselectExercise,
 }: Props): ReactElement => {
+  const { t } = useTranslation()
   return (
     <div>
-      <p>You have selected {exercises.length} exercises</p>
+      <p>
+        {t('selectedExerciseList.amountOfExercises', {
+          amount: exercises.length,
+        })}
+      </p>
       <ul>
         {exercises.map((exercise) => {
           return (
             <Container key={exercise.id}>
               <p>{exercise.title.value_en}</p>
               <button onClick={() => onUnselectExercise(exercise)}>
-                UNSELECT
+                {t('selectedExerciseList.unselect')}
               </button>
             </Container>
           )

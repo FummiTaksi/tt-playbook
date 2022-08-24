@@ -1,5 +1,16 @@
 {
+  "languages": {
+    "en": "English",
+    "fi": "Suomi"
+  },
   "frontpage": {
     "welcome": "Welcome!"
+  },
+  "unselectedExerciseList": {
+    "select": "Select"
+  },
+  "selectedExerciseList": {
+    "unselect": "Unselect",
+    "amountOfExercises": "You have selected {{ amount }} exercises"
   }
 }

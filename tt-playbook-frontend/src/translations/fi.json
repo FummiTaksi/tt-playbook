@@ -1,5 +1,16 @@
 {
+  "languages": {
+    "en": "English",
+    "fi": "Suomi"
+  },
   "frontpage": {
     "welcome": "Tervetuloa!"
+  },
+  "unselectedExerciseList": {
+    "select": "Valitse"
+  },
+  "selectedExerciseList": {
+    "unselect": "Poista",
+    "amountOfExercises": "Olet valinnut {{ amount }} harjoitusta"
   }
 }
