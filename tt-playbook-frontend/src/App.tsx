@@ -5,10 +5,12 @@ import { exercises } from './constants'
 import { ExerciseCatalog } from './exercise/exercise-catalog'
 import { LanguageSelector } from './language/LanguageSelector'
 
-const App = (): ReactElement => {
+interface Props {
+  exerciseCatalog: ExerciseCatalog
+}
+const App = ({ exerciseCatalog }: Props): ReactElement => {
   const { t } = useTranslation()
 
-  const exerciseCatalog = new ExerciseCatalog()
   return (
     <div className="App">
       <LanguageSelector />
