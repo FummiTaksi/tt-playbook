@@ -29,7 +29,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint \"{.,src,src/**}/*.{ts,tsx}\" --max-warnings=0 --cache",
-    "lint:fix": "eslint \"{.,src,src/**}/*.{ts,tsx}\" --max-warnings=0 --cache --fix"
+    "lint:fix": "eslint \"{.,src,src/**}/*.{ts,tsx}\" --max-warnings=0 --cache --fix",
+    "types:check": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": [
