@@ -17,14 +17,14 @@ export const UnselectedExercises = ({
   exercises,
   onSelectExercise,
 }: Props): ReactElement => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   return (
     <ul>
       {exercises.map((exercise) => {
         return (
           <Container key={exercise.id}>
-            <p>{exercise.title.value_en}</p>
+            <p>{exercise.title.getValue(i18n.language)}</p>
             <button onClick={() => onSelectExercise(exercise)}>
               {t('unselectedExerciseList.select')}
             </button>
