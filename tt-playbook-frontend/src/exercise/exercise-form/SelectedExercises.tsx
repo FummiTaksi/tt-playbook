@@ -26,9 +26,9 @@ export const SelectedExercises = ({
         })}
       </p>
       <ul>
-        {exercises.map((exercise) => {
+        {exercises.map((exercise, index) => {
           return (
-            <Container key={exercise.id}>
+            <Container key={`${index}-exerciseId-${exercise.id}`}>
               <p>{exercise.title.getValue(i18n.language)}</p>
               <button onClick={() => onUnselectExercise(exercise)}>
                 {t('selectedExerciseList.unselect')}
