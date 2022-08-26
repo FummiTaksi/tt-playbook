@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 interface Props {
   exercises: Exercise[]
-  onUnselectExercise: (exercise: Exercise) => void
+  onUnselectExercise: (index: number) => void
 }
 
 const Container = styled.div`
@@ -30,7 +30,7 @@ export const SelectedExercises = ({
           return (
             <Container key={`${index}-exerciseId-${exercise.id}`}>
               <p>{exercise.title.getValue(i18n.language)}</p>
-              <button onClick={() => onUnselectExercise(exercise)}>
+              <button onClick={() => onUnselectExercise(index)}>
                 {t('selectedExerciseList.unselect')}
               </button>
             </Container>

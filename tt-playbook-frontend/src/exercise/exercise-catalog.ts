@@ -13,10 +13,9 @@ export class ExerciseCatalog {
     this.exercises = newExercises
   }
 
-  remove(removedExercise: Exercise): void {
-    const newExercises = this.exercises.filter(
-      (exercise) => exercise.id !== removedExercise.id,
-    )
+  remove(index: number): void {
+    const newExercises = [...this.exercises]
+    newExercises.splice(index, 1)
 
     this.exercises = newExercises
   }

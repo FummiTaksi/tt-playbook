@@ -20,7 +20,7 @@ export const ExerciseForm = observer(
         />
         <SelectedExercises
           exercises={exerciseCatalog.exercises}
-          onUnselectExercise={(exercise) => exerciseCatalog.remove(exercise)}
+          onUnselectExercise={(index) => exerciseCatalog.remove(index)}
         />
       </div>
     )
