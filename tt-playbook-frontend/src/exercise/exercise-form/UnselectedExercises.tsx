@@ -28,8 +28,8 @@ export const UnselectedExercises = ({
           <Container key={exercise.id}>
             <p>{exercise.title.getValue(i18n.language)}</p>
             <IconButton onClick={() => onSelectExercise(exercise)}>
-              <AddCircleOutlineSharpIcon />
               {t('unselectedExerciseList.select')}
+              <AddCircleOutlineSharpIcon />
             </IconButton>
           </Container>
         )
