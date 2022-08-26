@@ -4,6 +4,7 @@ import { Exercise } from '../exercise'
 import { useTranslation } from 'react-i18next'
 import IconButton from '@mui/material/IconButton'
 import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp'
+import { Typography } from '@mui/material'
 
 interface Props {
   exercises: Exercise[]
@@ -26,7 +27,7 @@ export const UnselectedExercises = ({
       {exercises.map((exercise) => {
         return (
           <Container key={exercise.id}>
-            <p>{exercise.title.getValue(i18n.language)}</p>
+            <Typography>{exercise.title.getValue(i18n.language)}</Typography>
             <IconButton onClick={() => onSelectExercise(exercise)}>
               {t('unselectedExerciseList.select')}
               <AddCircleOutlineSharpIcon />

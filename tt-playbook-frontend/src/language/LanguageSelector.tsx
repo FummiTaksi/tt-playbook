@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Button } from '@mui/material'
 
 export const LanguageSelector = (): ReactElement => {
   const { t, i18n } = useTranslation()
@@ -9,7 +10,8 @@ export const LanguageSelector = (): ReactElement => {
   }
   return (
     <div>
-      <button
+      <Button
+        variant={'contained'}
         onClick={() => {
           void (async () => {
             await changeLanguage('en')
@@ -17,8 +19,9 @@ export const LanguageSelector = (): ReactElement => {
         }}
       >
         {t('languages.en')}
-      </button>
-      <button
+      </Button>
+      <Button
+        variant={'contained'}
         onClick={() => {
           void (async () => {
             await changeLanguage('fi')
@@ -26,7 +29,7 @@ export const LanguageSelector = (): ReactElement => {
         }}
       >
         {t('languages.fi')}
-      </button>
+      </Button>
     </div>
   )
 }
