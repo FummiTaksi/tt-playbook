@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react'
 import styled from 'styled-components'
 import { Exercise } from '../exercise'
 import { useTranslation } from 'react-i18next'
+import IconButton from '@mui/material/IconButton'
+import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp'
 
 interface Props {
   exercises: Exercise[]
@@ -25,9 +27,10 @@ export const UnselectedExercises = ({
         return (
           <Container key={exercise.id}>
             <p>{exercise.title.getValue(i18n.language)}</p>
-            <button onClick={() => onSelectExercise(exercise)}>
+            <IconButton onClick={() => onSelectExercise(exercise)}>
+              <AddCircleOutlineSharpIcon />
               {t('unselectedExerciseList.select')}
-            </button>
+            </IconButton>
           </Container>
         )
       })}
