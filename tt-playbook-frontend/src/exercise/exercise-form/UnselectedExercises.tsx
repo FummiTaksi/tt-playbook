@@ -3,12 +3,16 @@ import { Exercise } from '../exercise'
 import { useTranslation } from 'react-i18next'
 import IconButton from '@mui/material/IconButton'
 import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp'
-import { List, ListItem, ListItemText } from '@mui/material'
+import { List, ListItem, ListItemText, styled } from '@mui/material'
 
 interface Props {
   exercises: Exercise[]
   onSelectExercise: (exercise: Exercise) => void
 }
+
+const MyStyledListItem = styled(ListItem)`
+  width: 20%;
+`
 
 export const UnselectedExercises = ({
   exercises,
@@ -19,24 +23,19 @@ export const UnselectedExercises = ({
     <List>
       {exercises.map((exercise) => {
         return (
-          <ListItem
+          <MyStyledListItem
             key={exercise.id}
             secondaryAction={
-              <IconButton
-                onClick={() => onSelectExercise(exercise)}
-                edge={'end'}
-              >
+              <IconButton onClick={() => onSelectExercise(exercise)}>
                 {t('unselectedExerciseList.select')}
                 <AddCircleOutlineSharpIcon />
               </IconButton>
             }
-            alignItems={'flex-start'}
-            sx={{ width: '20%' }}
           >
             <ListItemText
               primary={exercise.title.getValue(i18n.language)}
             ></ListItemText>
-          </ListItem>
+          </MyStyledListItem>
         )
       })}
     </List>
